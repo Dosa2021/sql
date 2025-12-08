@@ -11,7 +11,9 @@ CREATE TABLE posts
   mood DECIMAL(4, 2) UNSIGNED,
   lang CHAR(2),
   category ENUM('Gadget', 'Game', 'Business'),
-  categories SET('Gadget', 'Game', 'Business')
+  categories SET('Gadget', 'Game', 'Business'),
+  is_draft BOOL,
+  created DATETIME
 );
 desc posts;
 
@@ -21,10 +23,10 @@ INSERT INTO posts
   ('thanks', 12) ;
 
 INSERT INTO posts
-  ( message, likes, mood, lang, category, categories )
+  ( message, likes, mood, lang, category, categories, is_draft, created )
   VALUES
-  ('thanks', 12, 7.825, 'EN', 'Gadget', 'Gadget,Game'),
-  ('arigato', 4, 4.21, 'JA', 'Gadget', 3);
-  ('arigato', 4, 4.21, 'JA', 'Gadget', 4);
-  ('arigato', 4, 4.21, 'JA', 'Gadget', 5);
+  ('thanks', 12, 7.825, 'EN', 'Gadget', 'Gadget,Game', TRUE, '2025-12-08 00:00:00'),
+  ('arigato', 4, 4.21, 'JA', 'Gadget', 3, FALSE, '2025-12-08 00:00:00'),
+  ('arigato', 4, 4.21, 'JA', 'Gadget', 4, 1, '2025-12-08 00:00:00'),
+  ('arigato', 4, 4.21, 'JA', 'Gadget', 5, 0, NOW());
 
