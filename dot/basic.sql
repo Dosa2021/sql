@@ -7,7 +7,8 @@ drop table if exists posts;
 CREATE TABLE posts 
 (
   message VARCHAR(140),
-  likes INT UNSIGNED,
+  -- likes INT UNSIGNED NOT NULL,
+  likes INT UNSIGNED DEFAULT 0,
   mood DECIMAL(4, 2) UNSIGNED,
   lang CHAR(2),
   category ENUM('Gadget', 'Game', 'Business'),
@@ -29,4 +30,3 @@ INSERT INTO posts
   ('arigato', 4, 4.21, 'JA', 'Gadget', 3, FALSE, '2025-12-08 00:00:00'),
   ('arigato', 4, 4.21, 'JA', 'Gadget', 4, 1, '2025-12-08 00:00:00'),
   ('arigato', 4, 4.21, 'JA', 'Gadget', 5, 0, NOW());
-
