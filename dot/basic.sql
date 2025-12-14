@@ -6,6 +6,8 @@ create database dot_sql;
 drop table if exists posts;
 CREATE TABLE posts 
 (
+  -- id INT NOT NULL ,
+  id INT NOT NULL AUTO_INCREMENT,
   message VARCHAR(140),
   -- likes INT UNSIGNED NOT NULL,
   -- likes INT UNSIGNED DEFAULT 0,
@@ -15,7 +17,8 @@ CREATE TABLE posts
   category ENUM('Gadget', 'Game', 'Business'),
   categories SET('Gadget', 'Game', 'Business'),
   is_draft BOOL,
-  created DATETIME
+  created DATETIME,
+  PRIMARY KEY (id)
 );
 desc posts;
 
