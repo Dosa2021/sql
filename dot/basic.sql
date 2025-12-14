@@ -34,3 +34,5 @@ INSERT INTO posts
   ('arigato', 4, 4.21, 'JA', 'Gadget', 3, FALSE, '2025-12-08 00:00:00'),
   ('arigato', 4, 4.21, 'HO', 'Gadget', 4, 1, '2025-12-08 00:00:00'),
   ('arigato', 4, 4.21, 'FU', 'Gadget', 5, 0, NOW());
+
+select * from posts;
