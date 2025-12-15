@@ -46,3 +46,17 @@ select * from posts where likes = 4 or likes = 9;
 select * from posts where likes in (4, 9);
 -- 反転
 select * from posts where likes not in (4, 9);
+
+
+select * from posts where message Like 't%';
+-- 完全一致
+select * from posts where message Like binary 't%';
+-- 後方一致
+select * from posts where message Like binary '%t';
+-- 部分一致
+select * from posts where message Like  '%g%';
+
+-- ３文字目が'a'
+select * from posts where message Like  '__a%';
+-- '%'文字を含む文字列
+select * from posts where message Like  '%\%%';
