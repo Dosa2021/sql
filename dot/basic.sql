@@ -35,4 +35,14 @@ INSERT INTO posts
   ('arigato', 4, 4.21, 'HO', 'Gadget', 4, 1, '2025-12-08 00:00:00'),
   ('arigato', 4, 4.21, 'FU', 'Gadget', 5, 0, NOW());
 
-select * from posts;
+select * from posts where likes >= 10 and likes <= 20;
+-- 上と同じ意味
+select * from posts where likes between 10 and 20;
+-- 反転
+select * from posts where likes not between 10 and 20;
+
+select * from posts where likes = 4 or likes = 9;
+-- 上と同じ意味
+select * from posts where likes in (4, 9);
+-- 反転
+select * from posts where likes not in (4, 9);
