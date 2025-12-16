@@ -60,3 +60,7 @@ select * from posts where message Like  '%g%';
 select * from posts where message Like  '__a%';
 -- '%'文字を含む文字列
 select * from posts where message Like  '%\%%';
+
+-- nullのレコード抽出
+select * from posts where likes is null;
+select * from posts where likes is not null;
