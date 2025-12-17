@@ -64,3 +64,6 @@ select * from posts where message Like  '%\%%';
 -- nullのレコード抽出
 select * from posts where likes is null;
 select * from posts where likes is not null;
+
+-- 20. 抽出結果の並べ替え
+select * from posts order by likes desc, message limit 2 offset 1;
