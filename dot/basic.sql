@@ -67,3 +67,12 @@ select * from posts where likes is not null;
 
 -- 20. 抽出結果の並べ替え
 select * from posts order by likes desc, message limit 2 offset 1;
+
+-- 21. 数値の関数
+select
+	likes * 500 / 3 as bounus,
+	FLOOR(likes * 500 / 3) as floor,
+	CEIL(likes * 500 / 3) as ceil,
+	ROUND(likes * 500 / 3, 2) as round
+from
+	posts;
