@@ -76,3 +76,11 @@ select
 	ROUND(likes * 500 / 3, 2) as round
 from
 	posts;
+
+-- » #22 文字列の関数を見ていこう
+select message, SUBSTRING(message, 3) from posts;
+select message, CONCAT(message, likes) from posts;
+-- バイト単位
+select message, LENGTH(message) from posts;
+-- 日本語の場合
+select message, char_length(message) from posts;
