@@ -84,3 +84,23 @@ select message, CONCAT(message, likes) from posts;
 select message, LENGTH(message) from posts;
 -- 日本語の場合
 select message, char_length(message) from posts;
+
+-- » #23 日時の関数を見ていこう
+select created, YEAR(created) from posts;
+select created, MONTH(created) from posts;
+select
+	created,
+	date_format(created, '%M %D %Y %W') 
+from posts;
+-- DATE_ADDの代わり？
+select
+	created,
+	DATE '2023-01-23' + INTERVAL '6' MONTH AS next
+from posts;
+-- 日付の差
+select
+	created,
+	NOW(),
+	DATEDIFF(created, NOW()) AS date
+from
+	posts;
