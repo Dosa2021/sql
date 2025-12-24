@@ -104,3 +104,12 @@ select
 	DATEDIFF(created, NOW()) AS date
 from
 	posts;
+
+-- » #24 レコードの更新をしてみよう
+UPDATE
+  posts 
+SET
+  likes = 30,
+  message = UPPER(message) 
+WHERE 
+  likes >= 10;
